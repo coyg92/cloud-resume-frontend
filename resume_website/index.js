@@ -46,7 +46,7 @@ var typed = new Typed('#typed', {
         'Cloud Enthusiast',
         'Automation Aspirer',
         'Process Improver',
-        'Avid Reader'
+        'Pipeline Pioneer'
     ],
     typeSpeed: 50,
     backSpeed: 50,
@@ -58,7 +58,7 @@ var typed_2 = new Typed('#typed_2', {
         'Cloud Enthusiast',
         'Automation Aspirer',
         'Process Improver',
-        'Avid Reader'
+        'Pipeline Pioneer'
     ],
     typeSpeed: 50,
     backSpeed: 50,
