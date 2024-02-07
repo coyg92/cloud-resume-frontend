@@ -3,6 +3,13 @@ on:
   push:
     branches:
       - main
+env:
+  BUCKET_NAME: "cloud-resume-challenge19"
+  AWS_REGION: "us-east-1"
+  
+permissions:
+  id-token: write
+  contents: read
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -10,21 +17,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.1
 
+      - name: Configure AWS Credentials Action for GitHub Actions
+        uses: aws-actions/configure-aws-credentials@v4.0.1
+        with:
+          role-session-name: admin
+          aws-region: ${{ env.AWS_REGION }}
+          role-to-assume: arn:aws:iam::905418409332:role/github-actions-frontend-role
+        
       - name: S3 Sync
         uses: jakejarvis/s3-sync-action@v0.5.1
         with:
           args: --acl private --follow-symlinks --delete --exclude '.git/*'
         env:
-          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_S3_BUCKET: ${{ env.AWS_S3_BUCKET }}
+          AWS_REGION: ${{ env.AWS_REGION }}
           SOURCE_DIR: 'resume_website'
 
       - name: Invalidate CloudFront Cache
         run: |
           aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_REGION: ${{ env.AWS_REGION }}
+
