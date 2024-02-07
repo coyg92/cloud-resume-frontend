@@ -6,6 +6,7 @@ on:
 env:
   AWS_S3_BUCKET: "cloud-resume-challenge19"
   AWS_REGION: "us-east-1"
+  CLOUDFRONT_DISTRIBUTION_ID: "E2R8WPASJY5TY"
   
 permissions:
   id-token: write
@@ -24,18 +25,13 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
           role-to-assume: arn:aws:iam::905418409332:role/github-actions-frontend-role
         
-      - name: S3 Sync
-        uses: jakejarvis/s3-sync-action@v0.5.1
-        with:
-          args: --acl private --follow-symlinks --delete --exclude '.git/*'
-        env:
-          AWS_S3_BUCKET: ${{ env.AWS_S3_BUCKET }}
-          AWS_REGION: ${{ env.AWS_REGION }}
-          SOURCE_DIR: 'resume_website'
+      - name: S3 Upload
+        run: |
+          aws s3 cp ~/resume_website/* s3://${{ env.AWS_S3_BUCKET }}/
 
       - name: Invalidate CloudFront Cache
         run: |
-          aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+          aws cloudfront create-invalidation --distribution-id ${{ env.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
         env:
           AWS_REGION: ${{ env.AWS_REGION }}
 
