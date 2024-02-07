@@ -27,7 +27,7 @@ jobs:
         
       - name: S3 Upload
         run: |
-          aws s3 cp ./resume_website/* s3://${{ env.AWS_S3_BUCKET }}/
+          aws s3 mv ./resume_website/* s3://${{ env.AWS_S3_BUCKET }}/
 
       - name: Invalidate CloudFront Cache
         run: |
