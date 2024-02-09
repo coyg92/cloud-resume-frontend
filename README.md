@@ -5,6 +5,6 @@ This repo encapsulates the front-end website components (HTML, CSS, JavaScript) 
 ![plot](https://github.com/ps-the-aux/cloud-resume-frontend/blob/main/images/cloud-resume-architecture.png?raw=true)
 
 <picture>
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/ps-the-aux/cloud-resume-frontend/blob/main/images/cloud-resume-architecture.png)">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/ps-the-aux/cloud-resume-frontend/blob/main/images/cloud-resume-architecture.png">
 </picture>
 
