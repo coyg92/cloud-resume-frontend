@@ -2,5 +2,9 @@
 
 This repo encapsulates the front-end website components (HTML, CSS, JavaScript) that host the static resume webpage. Check it out at https://resume.faisalorainan.cloud.
 
-![plot](https://github.com/ps-the-aux/cloud-resume-frontend/blob/main/images/cloud-resume-architecture.png#gh-light-mode-only)
+![plot](https://github.com/ps-the-aux/cloud-resume-frontend/blob/main/images/cloud-resume-architecture.png?raw=true)
+
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/ps-the-aux/cloud-resume-frontend/blob/main/images/cloud-resume-architecture.png)">
+</picture>
 
