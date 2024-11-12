@@ -1,6 +1,6 @@
 # Welcome to my Cloud Resume!
 
-This project is a cloud-based resume website hosted on AWS. A PDF version is available [here](https://github.com/ps-the-aux/cloud-resume-frontend/blob/main/resume_website/Faisal_Orainan_Resume.pdf).
+This project is a cloud-based resume website hosted on AWS. Check it out at https://resume.faisalorainan.cloud. A PDF version is available [here](https://github.com/ps-the-aux/cloud-resume-frontend/blob/main/resume_website/Faisal_Orainan_Resume.pdf).
 
 <picture>
   <source media="(prefers-color-scheme: light)" srcset="https://github.com/ps-the-aux/cloud-resume-frontend/blob/main/images/resume_workflow.png">
@@ -28,6 +28,4 @@ The website files are stored in the cloud, specifically in an S3 bucket. As chan
 - __CloudFront Cache Invalidation__: To ensure that changes are visible in real time (instead of the typical 24-hour delay), the workflow includes a step to invalidate the CloudFront cache, allowing immediate updates.
 
 By isolating the front-end code, it allows for streamlined updates, continuous integration, and automated deployment, ensuring the website stays current with minimal manual intervention.
-
-Check it out at https://resume.faisalorainan.cloud.
 
