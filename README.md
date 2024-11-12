@@ -1,6 +1,8 @@
 # Welcome to my Cloud Resume!
 
-This project is a cloud-based resume website hosted on AWS. Check it out at https://resume.faisalorainan.cloud. A PDF version is available [here](https://github.com/ps-the-aux/cloud-resume-frontend/blob/main/resume_website/Faisal_Orainan_Resume.pdf).
+This project is a cloud-based resume website hosted on AWS. 
+Check it out at https://resume.faisalorainan.cloud. 
+A PDF version is available [here](https://github.com/ps-the-aux/cloud-resume-frontend/blob/main/resume_website/Faisal_Orainan_Resume.pdf).
 
 <picture>
   <source media="(prefers-color-scheme: light)" srcset="https://github.com/ps-the-aux/cloud-resume-frontend/blob/main/images/resume_workflow.png">
