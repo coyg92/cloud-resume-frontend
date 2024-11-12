@@ -1,6 +1,8 @@
-# cloud-resume-frontend
+# Cloud Resume Frontend
 
-This repo encapsulates the front-end website components (HTML, CSS, JavaScript) that host the static resume webpage. Check it out at https://resume.faisalorainan.cloud.
+This repo encapsulates the static front-end files that host my resume website (HTML, CSS, JavaScript).
+
+Check it out at https://resume.faisalorainan.cloud.
 
 
 <picture>
